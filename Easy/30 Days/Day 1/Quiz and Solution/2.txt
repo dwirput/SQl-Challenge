@@ -38,3 +38,30 @@ FROM
 	orders 
 WHERE
 	orders.order_status = 'shipped'
+
+
+2.
+SELECT DISTINCT
+	orders.customer_id 
+FROM
+	orders 
+WHERE
+	orders.order_date < '2023-03-05'
+
+
+3.
+SELECT DISTINCT
+	AVG(orders.order_total)
+FROM
+	orders 
+WHERE
+	orders.order_status = 'delivered'
+
+
+4.
+SELECT DISTINCT
+	SUM(orders.order_total) as total_revenue
+FROM
+	orders 
+WHERE
+	orders.order_status = 'cancelled'
